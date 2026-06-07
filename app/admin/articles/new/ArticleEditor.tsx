@@ -75,7 +75,7 @@ export default function ArticleEditor() {
         reading_time: readingTime,
         published_at: asDraft ? null : new Date().toISOString(),
         author_id: user.id,
-      })
+      } as any)
 
     if (error) {
       toast.error('发布失败：' + error.message)
