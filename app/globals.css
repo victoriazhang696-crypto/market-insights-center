@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --font-inter: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+}
+
+/* Article content styles */
+.article-content h1 {
+  @apply text-2xl font-bold mb-4 mt-6;
+}
+
+.article-content h2 {
+  @apply text-xl font-semibold mb-3 mt-5;
+}
+
+.article-content h3 {
+  @apply text-lg font-semibold mb-2 mt-4;
+}
+
+.article-content p {
+  @apply mb-4 leading-relaxed;
+}
+
+.article-content ul {
+  @apply list-disc list-inside mb-4 space-y-1;
+}
+
+.article-content ol {
+  @apply list-decimal list-inside mb-4 space-y-1;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-blue-500 pl-4 py-2 my-4 bg-slate-50 dark:bg-slate-800/50 italic;
+}
+
+.article-content table {
+  @apply w-full border-collapse mb-4;
+}
+
+.article-content th,
+.article-content td {
+  @apply border border-slate-300 dark:border-slate-600 px-4 py-2 text-left;
+}
+
+.article-content th {
+  @apply bg-slate-100 dark:bg-slate-800 font-semibold;
+}
+
+.article-content a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.article-content code {
+  @apply bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.article-content pre {
+  @apply bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.article-content pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Risk warning box */
+.risk-warning {
+  @apply bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 my-6;
+}
+
+.risk-warning-title {
+  @apply font-semibold text-amber-800 dark:text-amber-200 mb-2;
+}
+
+.risk-warning-content {
+  @apply text-sm text-amber-700 dark:text-amber-300;
+}
