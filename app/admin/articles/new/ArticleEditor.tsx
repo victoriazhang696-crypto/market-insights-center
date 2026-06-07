@@ -54,7 +54,7 @@ export default function ArticleEditor() {
     }
 
     setPublishing(true)
-    const supabase = await createClient()
+    const supabase = createClient()
     
     // Get current user
     const { data: { user } } = await supabase.auth.getUser()
